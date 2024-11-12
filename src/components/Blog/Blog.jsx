@@ -10,10 +10,15 @@ const Blog = ({ blog, handleBookmarks, handleMarkAsRead }) => {
     hashtags,
     author_name,
     posted_date,
+    id,
   } = blog;
   return (
     <div className="mb-20  border-b pb-6 space-y-2">
-      <img className="w-[845px] h-[450px] rounded-2xl" src={cover} alt="" />
+      <img
+        className="w-[845px] h-[450px] rounded-2xl object-cover"
+        src={cover}
+        alt=""
+      />
       <div className="flex justify-between items-center my-4">
         <div className="flex space-x-5 items-center mt-4">
           <img
@@ -43,7 +48,7 @@ const Blog = ({ blog, handleBookmarks, handleMarkAsRead }) => {
       </p>
 
       <button
-        onClick={() => handleMarkAsRead(reading_time)}
+        onClick={() => handleMarkAsRead(reading_time, id)}
         className="text-purple-700 underline "
       >
         Mark as read
